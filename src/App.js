@@ -22,7 +22,10 @@ class App extends Component {
 
   // addCourse
   addCourse = (e) => {
-    e.preventDefault();
+    e.preventDefault();    
+    if(this.state.current === '')
+      return false
+    else{
     let current = this.state.current;
     let courses = this.state.courses;
     courses.push({name: current})
@@ -30,6 +33,7 @@ class App extends Component {
       courses,
       current: ''
     })
+  }
   }
 
   // deleteCourse
