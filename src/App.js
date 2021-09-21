@@ -53,9 +53,10 @@ class App extends Component {
   
   render() {
     const {courses} = this.state;
-    const courseList = courses.map( (course , index) => {
+    let length = courses.length;
+    const courseList = length ? courses.map( (course , index) => {
       return <CourseList details={course} key={index} index={index} update={this.handleChange} deleteCourse={this.deleteCourse} editCourse={this.editCourse}/>
-    })
+    }) : <p> There is no item to show </p>
     return (
       <section className="App">
         
